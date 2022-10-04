@@ -1,0 +1,28 @@
+from rich import print
+import os
+
+#CONSTANTES
+
+VOTOS_BOLSONARO = 0
+VOTOS_LULA = 0
+
+#PRA CONTINUAR RODANDO
+while True:
+    #APRESENTE OS CANDIDATOS
+    print('-' * 20)
+    print(f'[on blue]TOTAL BOLSONARO:{VOTOS_BOLSONARO}{os.linesep}')
+    print(f'[on red]TOTAL LULA:{VOTOS_LULA}{os.linesep}')
+    print('-' * 20)
+    #PERMITA VOTAR
+    try:
+        voto = int(input(f'PARA QUEM GOSTARIA DE VOTAR?{os.linesep} [1] - BOLSONARO {os.linesep} [2] - LULA {os.linesep} SEU VOTO:'))
+        if voto == 1:
+            VOTOS_BOLSONARO += 1
+        elif voto == 2:
+            VOTOS_LULA += 1
+        else:
+            pass
+    except:
+        print('POR FAVOR, DIGITE APENAS 1 OU 2')
+    os.system('cls')
+    
